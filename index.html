@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>Marvel Champions</title>
+
+        <!-- JQuery UI -->
+        <link rel="stylesheet" href="css/jquery-ui.css">
+        
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+        <!-- Custom CSS stylesheet -->
+        <link rel="stylesheet" href="css/main.css">
+        
+        <!-- Font Awesome -->
+        <link href="fontawesome/css/all.css" rel="stylesheet">
+        
+        <link rel="icon" href="images/web_icon.png" type="image/png" sizes="16x16">
+
+    </head>
+    <body>
+        <!-- TITLE DIV -->
+        <div id="topper" class="jumbotron">
+            <h1 class="title">Marvel Champions</h1>
+            <!-- Buttons to Open the Modal -->
+            <div class="container d-flex justify-content-around">
+                 <button type="button" class="btn btn-light d-inline-block flex-grow-1" onclick="window.location.reload();"><i class="fas fa-redo-alt mobile"></i><span class="fullscreen">Reset All</span></button> 
+                 <button type="button" class="btn btn-info d-inline-block flex-grow-1" data-toggle="modal" data-target="#picklistModal"><i class="fas fa-users mobile"></i><span class="fullscreen">Hero Selection</span></button> 
+                 <button type="button" class="btn btn-danger d-inline-block flex-grow-1" data-toggle="modal" data-target="#villainModal"><i class="fas fa-skull mobile"></i><span class="fullscreen">Villain Selection</span></button> 
+                 <button type="button" class="btn btn-warning d-inline-block flex-grow-1" data-toggle="modal" data-target="#encounterModal"><i class="fas fa-exclamation-triangle mobile"></i><span class="fullscreen">Encounter Selection</span></button> 
+            </div>
+        </div>
+        <hr>
+        <div class="container d-flex justify-content-around align-items-center" id="playerSelect">
+            <h4>Number of Heroes</h4>
+            <button type="button" class="btn btn-secondary d-inline-block flex-grow-1" onclick="setPlayers(1)">1</button>
+            <button type="button" class="btn btn-secondary d-inline-block flex-grow-1" onclick="setPlayers(2)">2</button>
+            <button type="button" class="btn btn-secondary d-inline-block flex-grow-1" onclick="setPlayers(3)">3</button>
+            <button type="button" class="btn btn-secondary d-inline-block flex-grow-1" onclick="setPlayers(4)">4</button>
+        </div>
+        <hr>
+                
+        <!-- ***** HERO 01 ***** -->    
+        <div id="hero01container">
+            <div id="hero01info">
+                <div class="container d-flex justify-content-center align-items-center" id="hero1">
+                    <h2 id="txtHero1" class="d-inline-block">Hero #1</h2>                
+                </div>
+                <div class="container">
+                    <div id="imgHero1" class="d-inline heroImageDiv"></div>
+                    <div id="aspect1" class="d-inline aspectImg"></div>
+                </div>
+                <div class="container txt-aspect">
+                    <h4 id="txtAspect1" class="d-inline-block"></h4>
+                </div>
+            </div>
+            
+<!--
+            <div class="container" id="hero1">
+                <h2 id="txtHero1">Hero #1</h2>
+                <div id="imgHero1" class="heroImageDiv"></div>
+            </div>
+            <div id="aspect1" class="aspectImageDiv"></div>
+-->
+            <br>
+
+            <button class="btn btn-primary d-inline-block" onclick="randomize(0)"><i class="fas fa-random mobile"></i><span class="fullscreen">Random Hero</span></button>
+
+            <!-- HERO 1 DROPDOWN -->
+            <div class="dropdown d-inline-block">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="btnHeroSelect01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Hero</button>
+                <div id="heroSelect01List" class="dropdown-menu" aria-labelledby="btnHeroSelect01">
+                </div>
+            </div>
+            <!-- ASPECT 1 DROPDOWN -->
+            <div class="dropdown d-inline-block">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="btnAspectSelect01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Aspect</button>
+                <div id="aspectSelect01List" class="dropdown-menu" aria-labelledby="btnAspectSelect01"></div>
+            </div>
+
+    <!--        <button class="btn btn-primary" onclick="randomPlayer1()">Random Hero</button>-->
+            <button class="btn btn-primary" onclick="randomize(2)"><i class="fas fa-random mobile"></i><span class="fullscreen">Random Aspect</span></button>
+        </div>
+        
+        <!-- ***** HERO 02 ***** -->
+        <div id="hero02container">
+            <br><br>
+            <div id="hero02info">
+                <div class="container d-flex justify-content-center align-items-center" id="hero2">
+                    <h2 id="txtHero2" class="d-inline-block">Hero #2</h2>                
+                </div>
+                <div class="container">
+                    <div id="imgHero2" class="d-inline heroImageDiv"></div>
+                    <div id="aspect2" class="d-inline aspectImg"></div>
+                </div>
+                <div class="container txt-aspect">
+                    <h4 id="txtAspect2" class="d-inline-block"></h4>
+                </div>
+            </div>
+            <br>
+            <button class="btn btn-primary" onclick="randomize(1)"><i class="fas fa-random mobile"></i><span class="fullscreen">Random Hero</span></button>
+            <!-- HERO 2 DROPDOWN -->
+            <div class="dropdown d-inline-block">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="btnHeroSelect02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Hero</button>
+                <div id="heroSelect02List" class="dropdown-menu" aria-labelledby="btnHeroSelect02">
+                </div>
+            </div>
+            <!-- ASPECT 2 DROPDOWN -->
+            <div class="dropdown d-inline-block">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="btnAspectSelect02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Aspect</button>
+                <div id="aspectSelect02List" class="dropdown-menu" aria-labelledby="btnAspectSelect02"></div>
+            </div>
+
+            <button class="btn btn-primary" onclick="randomize(3)"><i class="fas fa-random mobile"></i><span class="fullscreen">Random Aspect</span></button>
+        </div>
+        
+        <!-- ***** HERO 03 ***** -->
+        <div id="hero03container">
+            <br><br>
+            <div id="hero03info">
+                <div class="container d-flex justify-content-center align-items-center" id="hero3">
+                    <h2 id="txtHero3" class="d-inline-block">Hero #3</h2>                
+                </div>
+                <div class="container">
+                    <div id="imgHero3" class="d-inline heroImageDiv"></div>
+                    <div id="aspect3" class="d-inline aspectImg"></div>
+                </div>
+                <div class="container txt-aspect">
+                    <h4 id="txtAspect3" class="d-inline-block"></h4>
+                </div>
+            </div>
+            <br>
+            <button class="btn btn-primary" onclick="randomize(6)"><i class="fas fa-random mobile"></i><span class="fullscreen">Random Hero</span></button>
+            <!-- HERO 3 DROPDOWN -->
+            <div class="dropdown d-inline-block">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="btnHeroSelect03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Hero</button>
+                <div id="heroSelect03List" class="dropdown-menu" aria-labelledby="btnHeroSelect03">
+                </div>
+            </div>
+            <!-- ASPECT 3 DROPDOWN -->
+            <div class="dropdown d-inline-block">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="btnAspectSelect03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Aspect</button>
+                <div id="aspectSelect03List" class="dropdown-menu" aria-labelledby="btnAspectSelect03"></div>
+            </div>
+
+            <button class="btn btn-primary" onclick="randomize(7)"><i class="fas fa-random mobile"></i><span class="fullscreen">Random Aspect</span></button>
+        </div>
+        
+        <!-- ***** HERO 04 ***** -->
+        <div id="hero04container">
+            <br><br>
+            <div id="hero04info">
+                <div class="container d-flex justify-content-center align-items-center" id="hero4">
+                    <h2 id="txtHero4" class="d-inline-block">Hero #4</h2>                
+                </div>
+                <div class="container">
+                    <div id="imgHero4" class="d-inline heroImageDiv"></div>
+                    <div id="aspect4" class="d-inline aspectImg"></div>
+                </div>
+                <div class="container txt-aspect">
+                    <h4 id="txtAspect4" class="d-inline-block"></h4>
+                </div>
+            </div>
+            <br>
+            <button class="btn btn-primary" onclick="randomize(8)"><i class="fas fa-random mobile"></i><span class="fullscreen">Random Hero</span></button>
+            <!-- HERO 4 DROPDOWN -->
+            <div class="dropdown d-inline-block">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="btnHeroSelect04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Hero</button>
+                <div id="heroSelect04List" class="dropdown-menu" aria-labelledby="btnHeroSelect04">
+                </div>
+            </div>
+            <!-- ASPECT 4 DROPDOWN -->
+            <div class="dropdown d-inline-block">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="btnAspectSelect04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Aspect</button>
+                <div id="aspectSelect04List" class="dropdown-menu" aria-labelledby="btnAspectSelect04"></div>
+            </div>
+
+            <button class="btn btn-primary" onclick="randomize(9)"><i class="fas fa-random mobile"></i><span class="fullscreen">Random Aspect</span></button>
+        </div>
+        
+        <hr>
+        <h2>VS.</h2>
+<!--        <hr>-->
+        <div class="container" id="villainTxtDiv">
+            <h2 id="txtVillain" class="d-inline-block">Villain</h2>
+        </div>
+        <div class="container" id="villainImgDiv">
+            <div id="imgVillain" class="d-inline"></div>
+            <div id="imgEncounter" class="d-inline"></div>
+        </div>
+        <div class="container" id="encounterTxtDiv">
+            <h4 id="txtEncounter" class="d-inline-block"></h4>
+        </div>
+        <br>
+        <button class="btn btn-primary" onclick="randomize(4)"><i class="fas fa-random mobile"></i><span class="fullscreen">Random Villain</span></button>
+        <!-- VILLAIN DROPDOWN -->
+        <div class="dropdown d-inline-block">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="btnVillainSelect" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Villain</button>
+            <div id="villainSelectList" class="dropdown-menu" aria-labelledby="btnVillainSelect"></div>
+        </div>
+        <!-- ENCOUNTER DROPDOWN -->
+        <div class="dropdown d-inline-block">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="btnEncounterSelect" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Encounter</button>
+            <div id="encounterSelectList" class="dropdown-menu" aria-labelledby="btnEncounterSelect"></div>
+        </div>
+        <button id="btnRandomEncounter" class="btn btn-primary" onclick="randomize(5)"><i class="fas fa-random mobile"></i><span class="fullscreen">Random Encounter</span></button>
+<!--        <br>-->
+<!--        <button id="btnClearEncounter" class="btn btn-info" onclick="clearEncounter()"><i class="fas fa-random mobile"></i><span class="fullscreen">Clear Encounter</span></button>-->
+
+<!--        <h3 id="randomtest"></h3>-->
+                <br><br><br> 
+        <div id="footer" class="footer"></div>
+        
+        <br>
+
+        <!-- The Modal -->
+        <div class="modal" id="picklistModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Random Hero Availability</h4>
+<!--                  <button type="button" class="btn btn-primary">All</button>-->
+<!--                  <button type="button" class="btn btn-secondary">None</button>-->
+<!--                <button type="button" class="close" data-dismiss="modal">&times;</button>-->
+              </div>
+
+              <!-- Modal body -->
+              <div class="modal-body">
+                <div id="heroIcons"></div>
+              </div>
+
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button id="modal-apply" type="button" class="btn btn-primary" data-dismiss="modal">Apply</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+        <div class="modal" id="villainModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Random Villain Availability</h4>
+              </div>
+
+              <!-- Modal body -->
+              <div class="modal-body">
+                    <div id="villainIcons">
+                    </div>
+                
+              </div>
+
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button id="modal-apply" type="button" class="btn btn-primary" data-dismiss="modal">Apply</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+        <div class="modal" id="encounterModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Random Encounter Availability</h4>
+              </div>
+
+              <!-- Modal body -->
+              <div class="modal-body">
+
+                <div id="encounterIcons">
+                </div>
+
+              </div>
+
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button id="modal-apply" type="button" class="btn btn-primary" data-dismiss="modal">Apply</button>
+              </div>
+
+            </div>
+          </div>
+        </div>        
+        
+        <!-- BEGIN SCRIPTS -->
+                
+         <!-- JQuery -->
+        <script src="js/jquery-3.3.1.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        
+        <!-- Bootstrap -->
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        
+        <!-- Custom JavaScript -->
+        <script src="js/data.js" type="text/javascript"></script>
+        <script src="js/functions.js" type="text/javascript"></script>
+        
+        <!-- END SCRIPTS -->
+
+    </body>
+</html>
