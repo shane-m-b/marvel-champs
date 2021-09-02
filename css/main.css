@@ -1,0 +1,303 @@
+@font-face {
+  font-family: Marvel;
+  src: url(Marvel-Regular.ttf);
+}
+
+@font-face {
+  font-family: ComicBlast;
+  src: url(Bangers-Regular.ttf);
+}
+
+body {
+    text-align: center;
+    color: white;
+    background-image: url("../images/backgrounds/hawkeye_bg.png");
+}
+
+#actionText {
+    font-size: 10em;
+}
+
+#playerSelect {
+    font-family: ComicBlast;
+}
+
+#playerSelect h4{
+    margin-bottom: 0;
+}
+
+#playerSelect button {
+    font-size: 20px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    margin-bottom: 0;
+}
+
+.jumbotron {
+    background-color: black;
+    color: white;
+}
+
+#topper{
+    background-image: url("../images/backgrounds/topper_bg.png");
+    background-size: 100%;
+/*    background-color: #555;*/
+    box-shadow: 0 0 30px 3px #000;
+
+}
+
+h1{
+    margin-top: 2%;
+    margin-bottom: 0;
+    font-size: 2em;
+}
+
+h3{
+    font-size: 1em;
+}
+
+h2, h4{
+    font-family: ComicBlast;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+.lead {
+    font-size: 2em;
+}
+
+button {
+    margin-bottom: 1%;
+}
+
+.btn {
+/*    font-family: sans-serif;*/
+/*    font-family: Marvel;*/
+    text-transform: uppercase;
+}
+
+.btn:focus,.btn:active {
+   outline: none !important;
+   box-shadow: none !important;
+}
+
+.hero-col {
+    
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.div-inline{
+    display:inline-block;
+}
+
+.picklistIcon{
+    margin-right: 4%;
+    margin-left: 4%;
+    margin-bottom: 2.5%;
+    margin-top: 2.5%;
+    height: 6vh;
+}
+
+.title{
+    font-family: Marvel;
+    text-transform: uppercase;
+    margin-bottom: 1vh;
+    font-size: -webkit-xxx-large;
+/*    color: black;*/
+}
+
+#imgVillain img{
+     border-radius: 15px 0px 0px 15px;
+}
+
+#imgEncounter img{
+     border-radius: 0px 15px 15px 0px;
+}
+
+.heroImageDiv img{
+    border-radius: 15px 0px 0px 15px;
+}
+
+.aspectImg img{
+    border-radius: 0px 15px 15px 0px;
+}
+
+/*
+#aspect1 img, #aspect2 img, #aspect3 img, #aspect4 img {
+    border-radius: 0px 15px 15px 0px;
+}
+*/
+
+.txt-aspect {
+    margin-top: 5px;
+}
+
+#spider-woman {    
+    width:0px;
+    height:0px;
+    padding:89px 55px 89px 55px;
+    
+    border-radius: 0px 15px 15px 0px;
+    
+    background: url(../images/aspects/spider-woman.png);
+}
+
+/* BUTTONS */
+
+.btn-warning{
+    color: white;
+    background-color: darkorange;
+    border-color: darkorange;
+}
+
+.btn-warning:hover {
+    color: white;
+    background-color: darkorange;
+    border-color: darkorange;
+}
+
+.btn-warning:not(:disabled):not(.disabled).active, .btn-warning:not(:disabled):not(.disabled):active, .show>.btn-warning.dropdown-toggle{
+    color: #fff;
+    background-color: darkorange;
+    border-color: darkorange;
+}
+
+
+.btn-primary{
+    background-color: darkviolet;
+    border-color: darkviolet;
+}
+
+.btn-primary:hover {
+    background-color: darkviolet;
+    border-color: darkviolet;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle{
+    color: #fff;
+    background-color: darkviolet;
+    border-color: darkviolet;
+}
+
+/*  GREEN GOBLIN BUTTONS */
+
+.btn-green-goblin{
+    color: #fff;
+    background-color: #7B1E57;
+    border-color: #7B1E57;
+}
+
+.btn-green-goblin:hover {
+    color: #fff;
+    background-color: #7B1E57;
+    border-color: #7B1E57;
+}
+
+.btn-green-goblin:not(:disabled):not(.disabled).active, .btn-green-goblin:not(:disabled):not(.disabled):active, .show>.btn-green-goblin.dropdown-toggle{
+    color: #fff;
+    background-color: purple;
+    border-color: purple;
+}
+
+/*  RED SKULL BUTTONS */
+
+.btn-red-skull{
+    color: #fff;
+    background-color: #A71A23;
+    border-color: #A71A23;
+}
+
+.btn-red-skull:hover {
+    color: #fff;
+    background-color: #A71A23;
+    border-color: #A71A23;
+}
+
+.btn-red-skull:not(:disabled):not(.disabled).active, .btn-red-skull:not(:disabled):not(.disabled):active, .show>.btn-red-skull.dropdown-toggle{
+    color: #fff;
+    background-color: darkred;
+    border-color: darkred;
+}
+
+/*  KANG BUTTONS */
+
+.btn-kang{
+    color: #fff;
+    background-color: #007BA7;
+    border-color: #007BA7;
+}
+
+.btn-kang:hover {
+    color: #fff;
+    background-color: #007BA7;
+    border-color: #007BA7;
+}
+
+.btn-kang:not(:disabled):not(.disabled).active, .btn-red-skull:not(:disabled):not(.disabled):active, .show>.btn-red-skull.dropdown-toggle{
+    color: #fff;
+    background-color: #007BA7;
+    border-color: #007BA7;
+}
+
+.full {
+    opacity: 100%;
+}
+
+.faded {
+    opacity: 50%;
+}
+
+.btn-encounter{
+    margin: 0.5%;
+}
+
+/* MODAL CSS */
+
+.modal-content{
+    color: white;
+    background-color: black;
+}
+
+.fullscreen{
+    display: none;
+}
+
+.mobile {
+    display: inline;
+}
+
+/* FUTURE: DESKTOP CSS */
+
+@media only screen and (min-width: 768px){
+ 
+    body {
+        text-align: center;
+    }
+
+    #actionText {
+        font-size: 40vh;
+    }
+    
+    .fullscreen{
+        display: inline;
+    }
+    
+    .mobile{
+        display: none !important;
+    }
+    
+    .title {
+        font-size: 10vw;
+    }
+    
+    #topper{
+        background-image: url("../images/backgrounds/topper_bg_huge.png");
+        background-size: 100%;
+    /*    background-color: #555;*/
+        box-shadow: 0 0 30px 3px #000;
+        background-position: bottom; 
+
+    }
+    
+}
